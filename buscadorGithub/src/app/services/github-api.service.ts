@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable()
-export class GithubApiServiceService {
+export class GithubApiService {
 
 baseUrl:string = 'https://api.github.com/users/'
 
