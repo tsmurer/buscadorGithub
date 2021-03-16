@@ -1,0 +1,10 @@
+.user-card {
+    max-width: 20rem;
+
+    & mat-card-actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -7,7 +7,11 @@
     </button>
   </mat-form-field>
 
-  <button mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+  <button 
+    mat-mini-fab 
+    color="warn" 
+    (click) = 'this.buscar(this.value)'
+    >
     <mat-icon>search</mat-icon>
   </button>
 </div>

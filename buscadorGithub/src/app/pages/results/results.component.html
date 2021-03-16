@@ -1,0 +1,21 @@
+<div class="results">
+  <app-user-card [userinfo] ="this.user" class="user-card"></app-user-card>
+
+  <div class="repos">
+    <mat-card *ngFor="let repo of this.repos" class="repos__repo">
+      <h4 class="repos__repo__name">{{repo.name}}</h4>
+      <div class="repos__repo__details">
+        <div class="repos__repo__details__stars">
+          <mat-icon>star</mat-icon>
+          <span>{{repo.stargazers_count}}</span>
+        </div>
+        <p>Criado em: {{repo.created_at}}</p>
+        <p class="repos__repo__details__description">{{repo.description}}</p>
+        <span>Linguagem: {{repo.language}}</span>
+        <span>Atualizado em {{repo.pushed_at}}</span>
+      </div>
+      
+    </mat-card>
+  </div>
+  
+</div>

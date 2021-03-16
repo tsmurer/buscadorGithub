@@ -4,18 +4,17 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular
 @Injectable()
 export class GithubApiService {
 
-baseUrl:string = 'https://api.github.com/users/'
+baseUrl = 'https://api.github.com/users/';
 
-constructor(private http: HttpClient) { 
+constructor(private http: HttpClient) {
 }
 
-
-getUserDetails(username:string) {
+getUserDetails(username: string) {
     return this.http.get(this.baseUrl + username);
 }
 
-getUserRepos(username:string){
+getUserRepos(username: string) {
     return this.http.get(this.baseUrl + username + '/repos');
 }
-    
+
 }

@@ -1,5 +1,6 @@
 @import "../../../styles.scss";
 
 app-buscador {
+    display: inline-block;
     @include centralizar(true, true);
 }

@@ -33,7 +33,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 @mixin centralizar($horizontal: true, $vertical: true) {
-    position: absolute;
+    position: relative;
     @if ($horizontal and $vertical) {
       top: 50%;
       left: 50%;
