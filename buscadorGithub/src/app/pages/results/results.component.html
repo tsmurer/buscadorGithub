@@ -9,10 +9,10 @@
           <mat-icon>star</mat-icon>
           <span>{{repo.stargazers_count}}</span>
         </div>
-        <p>Criado em: {{repo.created_at}}</p>
+        <p>Criado em: {{this.handleDatetime(repo.created_at)}}</p>
         <p class="repos__repo__details__description">{{repo.description}}</p>
         <span>Linguagem: {{repo.language}}</span>
-        <span>Atualizado em {{repo.pushed_at}}</span>
+        <span>Atualizado em {{this.handleDatetime(repo.pushed_at)}}</span>
       </div>
       
     </mat-card>

@@ -23,4 +23,12 @@ export class ResultsComponent implements OnInit {
 
   }
 
+  handleDatetime(d:string) {
+    //2018-11-19T17:41:28Z
+    const dateTime = d.split('T');
+    const date = dateTime[0].split('-').reverse();
+    const time = dateTime[1].slice(0, -1);
+    return time + ' ' + date.join('/') ;
+  }
+
 }
