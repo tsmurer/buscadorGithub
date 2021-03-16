@@ -15,7 +15,7 @@ export class ResultsComponent implements OnInit {
     const data = this.router.getCurrentNavigation().extras.state;
     this.user = data.user;
     this.repos = data.repos.sort((a,b) => {
-      b.stargazers_count - a.stargazers_count;
+      return b.stargazers_count - a.stargazers_count;
     });
    }
 
