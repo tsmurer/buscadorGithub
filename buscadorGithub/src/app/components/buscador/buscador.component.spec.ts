@@ -17,9 +17,10 @@ describe('BuscadorComponent', () => {
   let service: GithubApiService;
 
   beforeEach(async(() => {
+    dialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
     TestBed.configureTestingModule({
       declarations: [ BuscadorComponent ],
-      imports: [ 
+      imports: [
         FormsModule,
         HttpClientTestingModule,
         RouterModule.forRoot([])
@@ -37,15 +38,11 @@ describe('BuscadorComponent', () => {
     fixture = TestBed.createComponent(BuscadorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    service = TestBed.get(GithubApiService);  
+    service = TestBed.get(GithubApiService);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-
-
-  //buscar()
-  
 });

@@ -7,8 +7,9 @@ import { GithubApiService } from './github-api.service';
 describe('Service: GithubApi', () => {
   let service: GithubApiService;
   let dialogSpy: MatDialog;
-  
+
   beforeEach(() => {
+    dialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule
@@ -22,8 +23,8 @@ describe('Service: GithubApi', () => {
     service = TestBed.get(GithubApiService);
   });
 
-  it('should ...', inject([GithubApiService], (service: GithubApiService) => {
-    expect(service).toBeTruthy();
+  it('should ...', inject([GithubApiService], (s: GithubApiService) => {
+    expect(s).toBeTruthy();
   }));
 
   it('should find user details', () => {

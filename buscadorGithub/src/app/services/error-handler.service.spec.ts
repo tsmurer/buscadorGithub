@@ -6,11 +6,11 @@ import { ErrorHandlerService } from './error-handler.service';
 
 describe('Service: ErrorHandler', () => {
 
-  let dialogSpy: MatDialog;
+  const dialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
   let service: ErrorHandlerService;
 
   beforeEach(() => {
-    dialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
+
     TestBed.configureTestingModule({
       providers: [
         ErrorHandlerService,
@@ -18,21 +18,18 @@ describe('Service: ErrorHandler', () => {
       ]
     });
     service = TestBed.get(ErrorHandlerService);
-    
   });
 
-  it('should ...', inject([ErrorHandlerService], (service: ErrorHandlerService) => {
-    expect(service).toBeTruthy();
+  it('should ...', inject([ErrorHandlerService], (s: ErrorHandlerService) => {
+    expect(s).toBeTruthy();
   }));
 
-  //handleError
-
   it('should handle errors', () => {
-    let error: any;
+    const spy = spyOn(service, 'notFoundDialog');
+    const error = new Error();
     service.handleError(error);
-    expect(service).toThrowError;
+    expect(spy).toHaveBeenCalled();
   });
-  //notFoundDialog
 
   it('should open dialog', () => {
     service.notFoundDialog();

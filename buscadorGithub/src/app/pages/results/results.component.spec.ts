@@ -9,11 +9,11 @@ describe('ResultsComponent', () => {
   let fixture: ComponentFixture<ResultsComponent>;
   let component: ResultsComponent;
 
-  class RouterStub{
-    getCurrentNavigation(){
+  class RouterStub {
+    getCurrentNavigation() {
       return {
          extras: {
-            state:{
+            state: {
               user: {},
               repos: [
                 {
@@ -25,10 +25,10 @@ describe('ResultsComponent', () => {
             ]
             }
           }
-        }
+        };
       }
    }
-  
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

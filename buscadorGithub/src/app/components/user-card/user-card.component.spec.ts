@@ -8,7 +8,7 @@ import { UserCardComponent } from './user-card.component';
 describe('UserCardComponent', () => {
   let component: UserCardComponent;
   let fixture: ComponentFixture<UserCardComponent>;
-  
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -22,13 +22,13 @@ describe('UserCardComponent', () => {
     fixture = TestBed.createComponent(UserCardComponent);
     component = fixture.componentInstance;
     component.userinfo = {
-      name: "foo",
-      login: "bar",
-      avatar_url: "google.com",
-      bio: ":D",
+      name: 'foo',
+      login: 'bar',
+      avatar_url: 'google.com',
+      bio: ':D',
       followers: 1,
       following: 2
-    }
+    };
     fixture.detectChanges();
   });
 
