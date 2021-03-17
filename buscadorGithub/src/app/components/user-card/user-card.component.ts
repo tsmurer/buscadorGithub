@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UserCardComponent implements OnInit {
 
   @Input() userinfo: any;
-  
+
   constructor() { }
 
   ngOnInit() {

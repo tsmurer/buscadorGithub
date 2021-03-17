@@ -1,4 +1,8 @@
 .buscador {
     display: flex;
     gap: 2rem;
+
+    & button {
+        background-color: black;
+    }
 }

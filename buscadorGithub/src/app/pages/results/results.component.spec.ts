@@ -1,17 +1,45 @@
-/* tslint:disable:no-unused-variable */
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ResultsComponent } from './results.component';
 
 describe('ResultsComponent', () => {
-  let component: ResultsComponent;
   let fixture: ComponentFixture<ResultsComponent>;
+  let component: ResultsComponent;
+
+  class RouterStub{
+    getCurrentNavigation(){
+      return {
+         extras: {
+            state:{
+              user: {},
+              repos: [
+                {
+                  created_at: '2018-10-16T14:40:17Z',
+                  pushed_at: '2018-10-16T14:40:17Z',
+                  stargazers_count: 0,
+                  language: 'Java'
+                },
+            ]
+            }
+          }
+        }
+      }
+   }
+  
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResultsComponent ]
+      declarations: [ ResultsComponent ],
+      imports: [
+        RouterTestingModule,
+      ],
+      providers: [
+        { provide: Router, useClass: RouterStub }
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));
@@ -24,5 +52,11 @@ describe('ResultsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should handle dateTime format', () => {
+    const dateTime = '2018-11-19T17:41:28Z';
+    const newFormat = component.handleDatetime(dateTime);
+    expect(newFormat).toBe('17:41:28 19/11/2018');
   });
 });

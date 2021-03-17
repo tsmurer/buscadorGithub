@@ -1,6 +1,16 @@
 @import "../../../styles.scss";
 
+.index-page {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    @include centralizar(true, true);
+    align-items: center;
+}
+
+.github-logo {
+    width: 10rem;
+}
 app-buscador {
     display: inline-block;
-    @include centralizar(true, true);
 }

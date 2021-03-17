@@ -14,7 +14,7 @@ export class ResultsComponent implements OnInit {
   constructor(private router: Router) {
     const data = this.router.getCurrentNavigation().extras.state;
     this.user = data.user;
-    this.repos = data.repos.sort((a,b) => {
+    this.repos = data.repos.sort( (a, b) => {
       return b.stargazers_count - a.stargazers_count;
     });
    }
@@ -23,8 +23,7 @@ export class ResultsComponent implements OnInit {
 
   }
 
-  handleDatetime(d:string) {
-    //2018-11-19T17:41:28Z
+  handleDatetime(d: string) {
     const dateTime = d.split('T');
     const date = dateTime[0].split('-').reverse();
     const time = dateTime[1].slice(0, -1);

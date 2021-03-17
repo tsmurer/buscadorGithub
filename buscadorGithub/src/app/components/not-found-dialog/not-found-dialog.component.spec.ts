@@ -3,22 +3,22 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 
-import { IndexPageComponent } from './index-page.component';
+import { NotFoundDialogComponent } from './not-found-dialog.component';
 
-describe('IndexPageComponent', () => {
-  let component: IndexPageComponent;
-  let fixture: ComponentFixture<IndexPageComponent>;
+describe('NotFoundDialogComponent', () => {
+  let component: NotFoundDialogComponent;
+  let fixture: ComponentFixture<NotFoundDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IndexPageComponent ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [ NotFoundDialogComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IndexPageComponent);
+    fixture = TestBed.createComponent(NotFoundDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

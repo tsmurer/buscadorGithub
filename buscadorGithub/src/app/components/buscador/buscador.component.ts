@@ -24,24 +24,25 @@ export class BuscadorComponent implements OnInit {
   buscar(username) {
 
     // requisiçao endpoint de user info
-    this.githubApiService.getUserDetails(username).subscribe(
-      (resp) => {
-        this.userInfo = resp;
+    if (username) {
+      this.githubApiService.getUserDetails(username).subscribe(
+        (respUserDetails) => {
+          this.userInfo = respUserDetails;
 
-        // requisiçao endpoint de user repos
-        this.githubApiService.getUserRepos(username).subscribe(
-          (resp) => {
-            this.reposInfo = resp;
+          // requisiçao endpoint de user repos
+          this.githubApiService.getUserRepos(username).subscribe(
+            (respUserRepos) => {
+              this.reposInfo = respUserRepos;
 
-            console.log(this.userInfo);
-            console.log(this.reposInfo);
-            this.router.navigate(['results', this.value], { state: { user: this.userInfo, repos: this.reposInfo} });
-            
-          }
-        )
-      }
-    );
+              console.log(this.userInfo);
+              console.log(this.reposInfo);
+              this.router.navigate(['results', this.value], { state: { user: this.userInfo, repos: this.reposInfo} });
+            }
+          );
+        }
+      );
 
+    }
   }
 
 }

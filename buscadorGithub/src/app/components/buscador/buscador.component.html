@@ -1,4 +1,4 @@
-<div class="buscador">
+<div class="buscador" (keydown.enter)='this.buscar(this.value)'>
   <mat-form-field class="example-form-field">
     <mat-label>Nome de Usuário</mat-label>
     <input matInput type="text" [(ngModel)]="value">

@@ -13,6 +13,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { GithubApiService } from './services/github-api.service';
 import { ResultsComponent } from './pages/results/results.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
+import { ErrorHandlerService } from './services/error-handler.service';
+import { NotFoundDialogComponent } from './components/not-found-dialog/not-found-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,11 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     IndexPageComponent,
     BuscadorComponent,
     ResultsComponent,
-    UserCardComponent
+    UserCardComponent,
+    NotFoundDialogComponent
+  ],
+  entryComponents: [
+    NotFoundDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,8 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     HttpClientModule
   ],
   providers: [
-    GithubApiService
+    GithubApiService,
+    ErrorHandlerService
   ],
   bootstrap: [AppComponent]
 })
