@@ -9,5 +9,5 @@ Antes do deploy da aplicação no Netlify, são executados os testes de Lint e t
 
 ## Screenshots
 
-![Alt text](/buscadorGithub/src/assets/screenshots/screenshot2.jpg?raw=true Página de Busca)
+![Alt text](/buscadorGithub/src/assets/screenshots/screenshot2.jpg?raw=true "Página de Busca")
 ![Alt text](/buscadorGithub/src/assets/screenshots/screenshot1.jpg?raw=true "Resultados")
