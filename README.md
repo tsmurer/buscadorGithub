@@ -11,3 +11,7 @@ Antes do deploy da aplicação no Netlify, são executados os testes de Lint e t
 
 ![Alt text](/buscadorGithub/src/assets/screenshots/screenshot2.jpg?raw=true "Página de Busca")
 ![Alt text](/buscadorGithub/src/assets/screenshots/screenshot1.jpg?raw=true "Resultados")
+
+## Para executar localmente
+
+Para executar esta aplicação localmente, é necessário ter instalada a aplicação do Angular 8 e utilizar o comando "ng i" a nível do diretório do projeto. Desta forma, todas as dependências do projeto serão instaladas. Assim, basta utilizar o comando "ng serve" para servir a aplicação em "localhost" na porta padrão 4200.
